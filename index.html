@@ -1,0 +1,829 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Parthiv turns ONE — 26 April 2026</title>
+
+<!-- WhatsApp / social meta -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Parthiv's First Birthday — 26 April 2026" />
+<meta property="og:description" content="Join us to celebrate Parthiv turning ONE! Cake cutting at 12 PM, NSS Karayogam, Varakadi." />
+<meta property="og:image" content="assets/share-card.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Parthiv's First Birthday — 26 April 2026" />
+<meta name="twitter:description" content="Cake cutting at 12 PM, NSS Karayogam, Varakadi." />
+<meta name="twitter:image" content="assets/share-card.png" />
+<meta name="theme-color" content="#0369A1" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,800;0,900;1,700;1,900&family=Nunito:wght@400;600;700;800;900&family=Caveat:wght@500;700&family=Pacifico&family=Lilita+One&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --sky-50: #F0F9FF;
+    --sky-100: #E0F2FE;
+    --sky-200: #BAE6FD;
+    --sky-300: #7DD3FC;
+    --sky-400: #38BDF8;
+    --sky-500: #0EA5E9;
+    --sky-600: #0284C7;
+    --sky-700: #0369A1;
+    --sky-800: #075985;
+    --sky-900: #0C4A6E;
+    --sun: #FCD34D;
+    --sun-deep: #F59E0B;
+    --blush: #FDA4AF;
+    --coral: #FB7185;
+    --peach: #FDBA74;
+    --mint: #6EE7B7;
+    --lilac: #C4B5FD;
+    --rose: #F472B6;
+    --cream: #FFFBEB;
+    --ink: #0C2A3E;
+  }
+
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: 'Nunito', system-ui, sans-serif;
+    color: var(--ink);
+    background:
+      radial-gradient(1100px 700px at 5% -5%, #FFE4E6 0%, transparent 55%),
+      radial-gradient(900px 600px at 110% 10%, #FEF3C7 0%, transparent 55%),
+      radial-gradient(1000px 800px at 90% 110%, #DDD6FE 0%, transparent 55%),
+      radial-gradient(900px 700px at -10% 80%, #BAE6FD 0%, transparent 55%),
+      linear-gradient(180deg, #FFF7ED 0%, #FCE7F3 35%, #E0F2FE 70%, #EDE9FE 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  /* Music toggle */
+  .float-controls {
+    position: fixed;
+    top: 14px; right: 14px;
+    z-index: 25;
+    display: flex; gap: 10px; align-items: center;
+  }
+  .music-btn {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    border: 0;
+    background: linear-gradient(135deg, var(--sun), var(--sun-deep));
+    color: var(--sky-900);
+    cursor: pointer;
+    display: grid; place-items: center;
+    box-shadow: 0 10px 22px -6px rgba(245,158,11,.6), inset 0 0 0 2px rgba(255,255,255,.6);
+    transition: transform .2s;
+    position: relative;
+  }
+  .music-btn:hover { transform: scale(1.08); }
+  .music-btn svg { width: 20px; height: 20px; }
+  .music-btn .ico-pause { display: none; }
+  .music-btn.playing .ico-play { display: none; }
+  .music-btn.playing .ico-pause { display: block; }
+  .music-btn.playing::before {
+    content: '';
+    position: absolute; inset: -4px;
+    border-radius: 50%;
+    border: 2px solid var(--sun);
+    animation: ring-pulse 1.6s ease-out infinite;
+  }
+  @keyframes ring-pulse {
+    0% { transform: scale(1); opacity: .9; }
+    100% { transform: scale(1.5); opacity: 0; }
+  }
+
+  /* Floating background decorations */
+  .sky-deco { position: fixed; inset: 0; pointer-events: none; overflow: hidden; z-index: 0; }
+  .cloud {
+    position: absolute;
+    background: #fff;
+    border-radius: 100px;
+    opacity: 0.85;
+    filter: drop-shadow(0 10px 20px rgba(3,105,161,0.08));
+    animation: drift linear infinite;
+  }
+  .cloud::before, .cloud::after {
+    content: ''; position: absolute; background: #fff; border-radius: 50%;
+  }
+  .cloud.c1 { width: 140px; height: 40px; top: 8%; left: -10%; animation-duration: 80s; }
+  .cloud.c1::before { width: 60px; height: 60px; top: -22px; left: 18px; }
+  .cloud.c1::after { width: 80px; height: 80px; top: -36px; left: 55px; }
+  .cloud.c2 { width: 180px; height: 50px; top: 35%; left: -20%; animation-duration: 110s; animation-delay: -40s; opacity: 0.7; }
+  .cloud.c2::before { width: 80px; height: 80px; top: -30px; left: 22px; }
+  .cloud.c2::after { width: 100px; height: 100px; top: -44px; left: 70px; }
+  .cloud.c3 { width: 120px; height: 36px; top: 65%; left: -15%; animation-duration: 95s; animation-delay: -60s; }
+  .cloud.c3::before { width: 55px; height: 55px; top: -20px; left: 14px; }
+  .cloud.c3::after { width: 70px; height: 70px; top: -32px; left: 46px; }
+  @keyframes drift { to { transform: translateX(140vw); } }
+
+  .star {
+    position: absolute;
+    width: 18px; height: 18px;
+    color: var(--sun);
+    animation: twinkle 3s ease-in-out infinite;
+  }
+  .star svg { width: 100%; height: 100%; display: block; }
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.35; transform: scale(0.85) rotate(0deg); }
+    50% { opacity: 1; transform: scale(1.1) rotate(20deg); }
+  }
+
+  .balloon {
+    position: absolute;
+    width: 42px; height: 54px;
+    border-radius: 50% 50% 48% 48% / 55% 55% 45% 45%;
+    animation: float 6s ease-in-out infinite;
+  }
+  .balloon::after {
+    content: ''; position: absolute; left: 50%; bottom: -30px;
+    width: 1.5px; height: 30px; background: rgba(12,74,110,.4); transform: translateX(-50%);
+  }
+  @keyframes float {
+    0%,100% { transform: translateY(0) rotate(-3deg); }
+    50% { transform: translateY(-14px) rotate(3deg); }
+  }
+
+  /* Layout */
+  .wrap {
+    position: relative;
+    z-index: 1;
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 20px 18px 60px;
+  }
+
+  /* Main card */
+  .card {
+    position: relative;
+    background: #fff;
+    border-radius: 32px;
+    overflow: hidden;
+    box-shadow:
+      0 30px 60px -20px rgba(3,105,161,0.35),
+      0 10px 20px -10px rgba(12,74,110,0.2),
+      inset 0 0 0 1px rgba(255,255,255,0.6);
+  }
+
+  /* Top hero */
+  .hero {
+    position: relative;
+    padding: 28px 24px 0;
+    background:
+      radial-gradient(circle at 20% 10%, rgba(253,164,175,.45) 0%, transparent 45%),
+      radial-gradient(circle at 85% 20%, rgba(252,211,77,.45) 0%, transparent 45%),
+      radial-gradient(circle at 50% 100%, rgba(196,181,253,.4) 0%, transparent 55%),
+      linear-gradient(180deg, #DCF1FF 0%, #B7DFF8 100%);
+    text-align: center;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; inset: 0;
+    background:
+      radial-gradient(circle at 15% 20%, rgba(255,255,255,.9) 0 3px, transparent 4px),
+      radial-gradient(circle at 85% 15%, rgba(255,255,255,.7) 0 2px, transparent 3px),
+      radial-gradient(circle at 25% 60%, rgba(255,255,255,.6) 0 2px, transparent 3px),
+      radial-gradient(circle at 75% 70%, rgba(255,255,255,.8) 0 3px, transparent 4px),
+      radial-gradient(circle at 50% 35%, rgba(255,255,255,.5) 0 2px, transparent 3px);
+    pointer-events: none;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 16px;
+    border-radius: 999px;
+    background: var(--sky-900);
+    color: var(--sun);
+    font-weight: 800;
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    box-shadow: 0 6px 16px -4px rgba(12,74,110,.5);
+  }
+  .eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--sun); }
+
+  .title-stack { position: relative; margin: 18px 0 6px; }
+  .lil-name {
+    font-family: 'Caveat', cursive;
+    font-weight: 700;
+    color: var(--sky-700);
+    font-size: 26px;
+    letter-spacing: 0.5px;
+    margin: 0;
+  }
+  .hero-name {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 900;
+    font-size: clamp(54px, 14vw, 82px);
+    line-height: 0.95;
+    letter-spacing: -1px;
+    margin: 0;
+    background: linear-gradient(135deg, #0C4A6E 0%, #0369A1 35%, #F472B6 65%, #F59E0B 100%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradient-shift 6s ease-in-out infinite;
+    filter: drop-shadow(0 4px 10px rgba(12,74,110,.15));
+  }
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  .hero-sub {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin: 8px 0 0;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+    font-size: 18px;
+    letter-spacing: 4px;
+    color: var(--sky-700);
+    text-transform: uppercase;
+  }
+  .hero-sub .line { width: 30px; height: 2px; background: var(--sun-deep); border-radius: 2px; }
+
+  /* Photo frame */
+  .photo-wrap {
+    position: relative;
+    width: 260px;
+    height: 260px;
+    margin: 20px auto 24px;
+    animation: float 5s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  .photo-ring {
+    position: absolute; inset: 0;
+    border-radius: 50%;
+    background: conic-gradient(from 0deg, var(--sky-400), var(--sun), var(--sky-300), var(--sky-600), var(--sky-400));
+    padding: 6px;
+    animation: glow 3.2s ease-in-out infinite;
+  }
+  @keyframes glow {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(252,211,77,0.55), 0 18px 30px -12px rgba(3,105,161,.45); }
+    50% { box-shadow: 0 0 0 12px rgba(252,211,77,0), 0 22px 34px -12px rgba(3,105,161,.55); }
+  }
+  .photo-ring::after {
+    content: ''; position: absolute; inset: -14px;
+    border-radius: 50%;
+    border: 3px dashed var(--sun);
+    opacity: 0.7;
+    animation: pulse 4s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.7; }
+    50% { transform: scale(1.05); opacity: 0.4; }
+  }
+  .photo-inner {
+    position: absolute; inset: 6px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: inset 0 0 0 6px #fff, 0 18px 30px -12px rgba(3,105,161,.45);
+  }
+  .photo-inner img {
+    width: 100%; height: 100%; object-fit: cover; object-position: center 25%;
+    display: block;
+  }
+  .one-badge {
+    position: absolute;
+    top: -10px; right: -6px;
+    width: 86px; height: 86px;
+    border-radius: 50%;
+    background: var(--sun);
+    color: var(--sky-900);
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: 62px;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 14px 26px -8px rgba(245,158,11,.6), inset 0 0 0 4px #fff, inset 0 0 0 6px var(--sky-900);
+    transform: rotate(12deg);
+    animation: bob 3.5s ease-in-out infinite;
+  }
+  .one-badge span { margin-top: -6px; }
+  @keyframes bob {
+    0%,100% { transform: rotate(12deg) translateY(0); }
+    50% { transform: rotate(8deg) translateY(-6px); }
+  }
+
+  .photo-caption {
+    position: absolute; bottom: -14px; left: 50%; transform: translateX(-50%);
+    background: var(--sky-900); color: #fff;
+    font-family: 'Caveat', cursive;
+    font-size: 22px; font-weight: 700;
+    padding: 4px 18px;
+    border-radius: 999px;
+    white-space: nowrap;
+    box-shadow: 0 8px 18px -6px rgba(12,74,110,.5);
+  }
+
+  /* Body section */
+  .body {
+    padding: 40px 24px 28px;
+    text-align: center;
+    background:
+      radial-gradient(ellipse at top, #fff 0%, #F6FBFF 100%);
+  }
+  .intro {
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--sky-800);
+    margin: 0 auto 28px;
+    max-width: 400px;
+  }
+  .intro b { color: var(--sky-900); }
+
+  /* Details grid */
+  .details {
+    display: grid;
+    gap: 14px;
+    margin: 10px 0 26px;
+  }
+  .detail {
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    gap: 14px;
+    align-items: center;
+    padding: 16px;
+    background: linear-gradient(180deg, #F0F9FF 0%, #E0F2FE 100%);
+    border: 1.5px solid #BAE6FD;
+    border-radius: 20px;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+  .detail:hover { transform: translateY(-3px); box-shadow: 0 14px 26px -12px rgba(3,105,161,.35); }
+  .detail::before {
+    content: ''; position: absolute; top: -30px; right: -30px;
+    width: 90px; height: 90px; border-radius: 50%;
+    background: rgba(252,211,77,.22);
+    transition: transform .4s ease;
+  }
+  .detail:hover::before { transform: scale(1.15); }
+  .detail:nth-child(1) { background: linear-gradient(180deg, #FFF7ED 0%, #FED7AA 100%); border-color: #FDBA74; }
+  .detail:nth-child(1)::before { background: rgba(251,113,133,.2); }
+  .detail:nth-child(1) .icon { background: linear-gradient(135deg, var(--coral), var(--peach)); color: #fff; }
+  .detail:nth-child(2) { background: linear-gradient(180deg, #F0FDF4 0%, #BBF7D0 100%); border-color: var(--mint); }
+  .detail:nth-child(2)::before { background: rgba(110,231,183,.25); }
+  .detail:nth-child(2) .icon { background: linear-gradient(135deg, #10B981, #0EA5E9); color: #fff; }
+  .detail:nth-child(3) { background: linear-gradient(180deg, #FDF4FF 0%, #E9D5FF 100%); border-color: var(--lilac); }
+  .detail:nth-child(3)::before { background: rgba(244,114,182,.22); }
+  .detail:nth-child(3) .icon { background: linear-gradient(135deg, var(--rose), var(--lilac)); color: #fff; }
+  .detail .icon {
+    width: 52px; height: 52px;
+    border-radius: 16px;
+    background: var(--sky-900);
+    color: var(--sun);
+    display: grid; place-items: center;
+    box-shadow: 0 8px 16px -6px rgba(12,74,110,.5);
+    flex-shrink: 0;
+  }
+  .detail .icon svg { width: 26px; height: 26px; }
+  .detail .label {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--sky-600);
+    margin: 0 0 2px;
+  }
+  .detail .value {
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--sky-900);
+    line-height: 1.15;
+    margin: 0;
+  }
+  .detail .sub {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--sky-700);
+    margin-top: 3px;
+  }
+
+  /* Map */
+  .map-card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1.5px solid #BAE6FD;
+    background: #F0F9FF;
+    margin: 0 0 10px;
+    box-shadow: 0 10px 20px -12px rgba(3,105,161,.3);
+  }
+  .map-frame {
+    width: 100%;
+    height: 200px;
+    border: 0;
+    display: block;
+  }
+  .map-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 20px;
+    background: var(--sky-900);
+    color: var(--sun);
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .map-btn:hover { background: var(--sky-800); }
+  .map-btn svg { width: 18px; height: 18px; }
+
+  /* Footer */
+  .foot {
+    padding: 24px 20px 26px;
+    text-align: center;
+    background: #fff;
+    border-top: 2px dashed var(--sky-200);
+  }
+  .foot .with-love {
+    font-family: 'Caveat', cursive;
+    font-size: 22px;
+    color: var(--sky-700);
+    font-weight: 700;
+    margin: 0;
+  }
+  .foot .family {
+    font-family: 'Fraunces', serif;
+    font-weight: 800;
+    font-size: 16px;
+    color: var(--sky-900);
+    margin: 4px 0 0;
+    letter-spacing: 1px;
+  }
+
+  /* top tag line above card */
+  .topline {
+    text-align: center;
+    font-family: 'Pacifico', 'Caveat', cursive;
+    font-size: 24px;
+    background: linear-gradient(90deg, var(--coral), var(--sun-deep), var(--rose));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin: 6px 0 12px;
+    font-weight: 400;
+    position: relative;
+    z-index: 2;
+    letter-spacing: .3px;
+  }
+
+  /* share button */
+  .share-row {
+    margin: 18px auto 0;
+    display: flex; justify-content: center; gap: 10px;
+    flex-wrap: wrap;
+  }
+  .share-btn {
+    background: #fff;
+    color: var(--sky-900);
+    border: 2px solid var(--sky-200);
+    padding: 11px 18px;
+    border-radius: 999px;
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: inline-flex; align-items: center; gap: 8px;
+    text-decoration: none;
+    transition: all .2s;
+  }
+  .share-btn:hover { background: var(--sky-50); border-color: var(--sky-400); }
+  .share-btn svg { width: 16px; height: 16px; }
+  .share-btn.wa { background: #25D366; color: #fff; border-color: #25D366; }
+  .share-btn.wa:hover { background: #1EB854; }
+
+  /* Developer credit */
+  .dev-credit {
+    margin: 22px auto 6px;
+    text-align: center;
+    font-size: 11px;
+    color: var(--sky-800);
+    opacity: 0.85;
+  }
+  .dev-credit a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 14px;
+    background: rgba(255,255,255,0.65);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(186,230,253,0.7);
+    border-radius: 999px;
+    color: var(--sky-900);
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: .3px;
+    transition: all .2s ease;
+    box-shadow: 0 6px 14px -8px rgba(12,74,110,.35);
+  }
+  .dev-credit a:hover {
+    background: #25D366;
+    color: #fff;
+    border-color: #25D366;
+    transform: translateY(-1px);
+    box-shadow: 0 10px 18px -8px rgba(37,211,102,.55);
+  }
+  .dev-credit svg { width: 13px; height: 13px; }
+  .dev-credit .heart { color: var(--rose); }
+
+  /* small screens */
+  @media (max-width: 380px) {
+    .wrap { padding: 14px 12px 40px; }
+    .body { padding-left: 18px; padding-right: 18px; }
+    .hero { padding: 24px 18px 0; }
+  }
+
+  /* Print */
+  @media print {
+    body { background: #fff; }
+    .share-row, .dev-credit, .map-card a.map-btn, .sky-deco { display: none !important; }
+    .card { box-shadow: none; }
+  }
+
+  .hidden { display: none !important; }
+
+</style>
+</head>
+<body>
+
+<!-- Floating music control -->
+<div class="float-controls">
+  <button type="button" class="music-btn" id="musicBtn" aria-label="Toggle music">
+    <svg class="ico-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+    <svg class="ico-pause" viewBox="0 0 24 24" fill="currentColor"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+  </button>
+</div>
+
+<!-- Floating decorations -->
+<div class="sky-deco" aria-hidden="true">
+  <div class="cloud c1"></div>
+  <div class="cloud c2"></div>
+  <div class="cloud c3"></div>
+
+  <div class="star" style="top:12%; left:6%; color:var(--coral);"><svg viewBox="0 0 20 20"><path fill="currentColor" d="M10 0l2.6 7.4L20 10l-7.4 2.6L10 20l-2.6-7.4L0 10l7.4-2.6z"/></svg></div>
+  <div class="star" style="top:22%; right:8%; animation-delay:.5s; color:var(--sun);"><svg viewBox="0 0 20 20"><path fill="currentColor" d="M10 0l2.6 7.4L20 10l-7.4 2.6L10 20l-2.6-7.4L0 10l7.4-2.6z"/></svg></div>
+  <div class="star" style="top:55%; left:4%; animation-delay:1s; width:14px; height:14px; color:var(--rose);"><svg viewBox="0 0 20 20"><path fill="currentColor" d="M10 0l2.6 7.4L20 10l-7.4 2.6L10 20l-2.6-7.4L0 10l7.4-2.6z"/></svg></div>
+  <div class="star" style="top:75%; right:6%; animation-delay:1.5s; color:var(--lilac);"><svg viewBox="0 0 20 20"><path fill="currentColor" d="M10 0l2.6 7.4L20 10l-7.4 2.6L10 20l-2.6-7.4L0 10l7.4-2.6z"/></svg></div>
+  <div class="star" style="top:38%; right:12%; animation-delay:2s; width:12px; height:12px; color:var(--mint);"><svg viewBox="0 0 20 20"><path fill="currentColor" d="M10 0l2.6 7.4L20 10l-7.4 2.6L10 20l-2.6-7.4L0 10l7.4-2.6z"/></svg></div>
+
+  <div class="balloon" style="background:linear-gradient(160deg,#F472B6,#FB7185); top:40%; left:3%; animation-delay:0s;"></div>
+  <div class="balloon" style="background:linear-gradient(160deg,#60A5FA,#38BDF8); top:18%; right:4%; animation-delay:1.5s;"></div>
+  <div class="balloon" style="background:linear-gradient(160deg,#FCD34D,#F59E0B); top:70%; right:3%; animation-delay:.8s;"></div>
+  <div class="balloon" style="background:linear-gradient(160deg,#6EE7B7,#10B981); top:85%; left:8%; animation-delay:2.2s;"></div>
+  <div class="balloon" style="background:linear-gradient(160deg,#C4B5FD,#8B5CF6); top:52%; right:9%; animation-delay:3s;"></div>
+</div>
+
+<div class="wrap">
+
+  <p class="topline">✨ We're turning ONE! ✨</p>
+
+  <article class="card">
+
+    <!-- HERO -->
+    <section class="hero">
+      <span class="eyebrow"><span class="dot"></span>You're invited<span class="dot"></span></span>
+
+      <div class="title-stack">
+        <p class="lil-name">Our little one —</p>
+        <h1 class="hero-name">Parthiv</h1>
+        <div class="hero-sub"><span class="line"></span>First Birthday<span class="line"></span></div>
+      </div>
+
+      <div class="photo-wrap">
+        <div class="photo-ring">
+          <div class="photo-inner">
+            <img src="assets/parthiv.jpg" alt="Parthiv" />
+          </div>
+        </div>
+        <div class="one-badge"><span>1</span></div>
+        <div class="photo-caption">Parthiv · 1 year</div>
+      </div>
+    </section>
+
+    <!-- BODY / DETAILS -->
+    <section class="body">
+      <p class="intro">
+        A tiny human, a whole year of smiles, and a little <b>"1"</b> waiting to be blown out.
+        Please join us as we celebrate <b>Parthiv's</b> very first birthday with cake, laughter, and lots of love.
+      </p>
+
+      <div class="details">
+        <div class="detail">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M8 3v4M16 3v4"/></svg>
+          </div>
+          <div>
+            <p class="label">When</p>
+            <p class="value">Sunday, 26 April 2026</p>
+            <p class="sub">Cake cutting at 12:00 PM</p>
+          </div>
+        </div>
+
+        <div class="detail">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <p class="label">Where</p>
+            <p class="value">NSS Karayogam</p>
+            <p class="sub">Varakadi</p>
+          </div>
+        </div>
+
+        <div class="detail">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 21V10c0-2 2-3 6-3s6 1 6 3v11"/><path d="M4 21h16"/><path d="M9 10V7c0-1.5 1-3 3-3s3 1.5 3 3v3"/><path d="M12 4V2"/><circle cx="10" cy="15" r="0.5" fill="currentColor"/><circle cx="14" cy="15" r="0.5" fill="currentColor"/></svg>
+          </div>
+          <div>
+            <p class="label">What to expect</p>
+            <p class="value">Cake, music & memories</p>
+            <p class="sub">Lunch will be served</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Map -->
+      <div class="map-card">
+        <iframe
+          class="map-frame"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=9.6249266,76.3268003&z=17&output=embed"
+          title="Venue location — Kanjikuzhy, S.L.Puram, Mararikulam"></iframe>
+        <a class="map-btn" href="https://maps.app.goo.gl/xBz28PhJuX7Hu93b6?g_st=ac" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 20l-6-3V5l6 3"/><path d="M9 20l6-3"/><path d="M15 17l6 3V8l-6-3"/><path d="M9 8l6-3"/></svg>
+          Open in Google Maps
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="foot">
+      <p class="with-love">With love,</p>
+      <p class="family">Parthiv &amp; Family</p>
+    </footer>
+  </article>
+
+  <div class="share-row">
+    <a class="share-btn wa" id="shareWA" href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.82 11.82 0 0 0 12.05 0C5.5 0 .18 5.31.18 11.87c0 2.09.55 4.13 1.6 5.93L0 24l6.34-1.66a11.85 11.85 0 0 0 5.7 1.45h.01c6.55 0 11.87-5.32 11.87-11.87 0-3.17-1.24-6.16-3.4-8.44zM12.05 21.79h-.01a9.9 9.9 0 0 1-5.04-1.38l-.36-.22-3.76.99 1-3.67-.24-.38a9.88 9.88 0 0 1-1.52-5.26c0-5.45 4.44-9.88 9.91-9.88 2.65 0 5.14 1.03 7.02 2.91a9.85 9.85 0 0 1 2.9 7c0 5.45-4.43 9.89-9.9 9.89z"/></svg>
+      Share on WhatsApp
+    </a>
+    <button class="share-btn" id="copyLink">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg>
+      <span id="copyTxt">Copy invite</span>
+    </button>
+  </div>
+
+  <p class="dev-credit">
+    <a href="https://wa.me/919400585673?text=Hi%20Anish%2C%20I%20liked%20the%20invitation%20site%20you%20built.%20Can%20we%20chat%3F" target="_blank" rel="noopener" aria-label="Chat with developer Anish on WhatsApp">
+      Crafted with <span class="heart">♥</span> by Anish
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.82 11.82 0 0 0 12.05 0C5.5 0 .18 5.31.18 11.87c0 2.09.55 4.13 1.6 5.93L0 24l6.34-1.66a11.85 11.85 0 0 0 5.7 1.45h.01c6.55 0 11.87-5.32 11.87-11.87 0-3.17-1.24-6.16-3.4-8.44zM12.05 21.79h-.01a9.9 9.9 0 0 1-5.04-1.38l-.36-.22-3.76.99 1-3.67-.24-.38a9.88 9.88 0 0 1-1.52-5.26c0-5.45 4.44-9.88 9.91-9.88 2.65 0 5.14 1.03 7.02 2.91a9.85 9.85 0 0 1 2.9 7c0 5.45-4.43 9.89-9.9 9.89z"/></svg>
+      94005 85673
+    </a>
+  </p>
+
+</div>
+
+<script>
+  // ---------- Music: synthesized "Happy Birthday" music-box ----------
+  const musicBtn = document.getElementById('musicBtn');
+  let audioCtx = null;
+  let isPlaying = false;
+  let activeNodes = [];
+  let loopTimer = null;
+
+  const N = {
+    G4: 392.00, A4: 440.00, B4: 493.88, C5: 523.25,
+    D5: 587.33, E5: 659.25, F5: 698.46, G5: 783.99
+  };
+  // [note, beats] — classic Happy Birthday melody in 3/4
+  const MELODY = [
+    ['G4', 0.75], ['G4', 0.25], ['A4', 1], ['G4', 1], ['C5', 1], ['B4', 2],
+    ['G4', 0.75], ['G4', 0.25], ['A4', 1], ['G4', 1], ['D5', 1], ['C5', 2],
+    ['G4', 0.75], ['G4', 0.25], ['G5', 1], ['E5', 1], ['C5', 1], ['B4', 1], ['A4', 2],
+    ['F5', 0.75], ['F5', 0.25], ['E5', 1], ['C5', 1], ['D5', 1], ['C5', 2]
+  ];
+
+  function playTone(freq, start, dur) {
+    // Music-box-ish voice: sine (body) + triangle one octave up (sparkle)
+    const makeVoice = (type, f, peak) => {
+      const osc = audioCtx.createOscillator();
+      const g = audioCtx.createGain();
+      osc.type = type;
+      osc.frequency.value = f;
+      g.gain.setValueAtTime(0, start);
+      g.gain.linearRampToValueAtTime(peak, start + 0.015);
+      g.gain.exponentialRampToValueAtTime(0.0005, start + dur * 0.95);
+      osc.connect(g);
+      g.connect(masterGain);
+      osc.start(start);
+      osc.stop(start + dur + 0.05);
+      activeNodes.push(osc);
+    };
+    makeVoice('sine', freq, 0.22);
+    makeVoice('triangle', freq * 2, 0.06);
+  }
+
+  let masterGain;
+  function initAudio() {
+    if (audioCtx) return;
+    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    masterGain = audioCtx.createGain();
+    masterGain.gain.value = 0.55;
+    // Subtle reverb-ish lowpass so it feels soft, not harsh
+    const filter = audioCtx.createBiquadFilter();
+    filter.type = 'lowpass';
+    filter.frequency.value = 3200;
+    masterGain.connect(filter);
+    filter.connect(audioCtx.destination);
+  }
+
+  function playMelody() {
+    initAudio();
+    if (audioCtx.state === 'suspended') audioCtx.resume();
+    const bpm = 112;
+    const beat = 60 / bpm;
+    let t = audioCtx.currentTime + 0.08;
+    MELODY.forEach(([note, beats]) => {
+      playTone(N[note], t, beats * beat);
+      t += beats * beat;
+    });
+    const totalMs = (t - audioCtx.currentTime + 1.6) * 1000;
+    loopTimer = setTimeout(() => { if (isPlaying) playMelody(); }, totalMs);
+  }
+
+  function stopMusic() {
+    isPlaying = false;
+    musicBtn.classList.remove('playing');
+    if (loopTimer) { clearTimeout(loopTimer); loopTimer = null; }
+    activeNodes.forEach(n => { try { n.stop(); } catch {} });
+    activeNodes = [];
+  }
+
+  function startMusic() {
+    if (isPlaying) return;
+    isPlaying = true;
+    musicBtn.classList.add('playing');
+    playMelody();
+  }
+
+  musicBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (isPlaying) stopMusic(); else startMusic();
+  });
+
+  // Auto-start on first page interaction (browsers require a gesture)
+  let autoTried = false;
+  document.addEventListener('click', (ev) => {
+    if (autoTried) return;
+    if (ev.target.closest('#musicBtn')) { autoTried = true; return; }
+    autoTried = true;
+    startMusic();
+  }, { passive: true });
+
+  // ---------- Share ----------
+  const MAPS_URL = 'https://maps.app.goo.gl/xBz28PhJuX7Hu93b6?g_st=ac';
+  const shareUrl = location.href;
+  const INVITE = `You're invited to Parthiv's 1st Birthday! 🎉
+📅 Sunday, 26 April 2026 · 12:00 PM
+📍 NSS Karayogam, Varakadi
+🗺️ ${MAPS_URL}
+${shareUrl}`;
+
+  document.getElementById('shareWA').href = `https://wa.me/?text=${encodeURIComponent(INVITE)}`;
+
+  document.getElementById('copyLink').addEventListener('click', async (e) => {
+    e.stopPropagation();
+    const txt = document.getElementById('copyTxt');
+    try {
+      await navigator.clipboard.writeText(INVITE);
+    } catch {}
+    txt.textContent = 'Copied! ✓';
+    setTimeout(() => { txt.textContent = 'Copy invite'; }, 2200);
+  });
+</script>
+
+</body>
+</html>
