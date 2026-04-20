@@ -798,14 +798,31 @@
     if (isPlaying) stopMusic(); else startMusic();
   });
 
-  // Auto-start on first page interaction (browsers require a gesture)
+  // Try to autoplay immediately; browsers that block will fall through to the
+  // interaction listeners below and start on the very first tap/scroll/key.
   let autoTried = false;
-  document.addEventListener('click', (ev) => {
-    if (autoTried) return;
-    if (ev.target.closest('#musicBtn')) { autoTried = true; return; }
+  function autoStart() {
+    if (autoTried || isPlaying) return;
     autoTried = true;
-    startMusic();
-  }, { passive: true });
+    try { startMusic(); } catch {}
+  }
+  autoStart();
+  window.addEventListener('load', autoStart);
+
+  const interactionEvents = ['pointerdown','click','touchstart','keydown','scroll','mousemove'];
+  function kickoff(ev) {
+    if (ev && ev.target && ev.target.closest && ev.target.closest('#musicBtn')) {
+      autoTried = true;
+      cleanupInteractionListeners();
+      return;
+    }
+    autoStart();
+    cleanupInteractionListeners();
+  }
+  function cleanupInteractionListeners() {
+    interactionEvents.forEach(ev => window.removeEventListener(ev, kickoff, { passive: true }));
+  }
+  interactionEvents.forEach(ev => window.addEventListener(ev, kickoff, { passive: true }));
 
   // ---------- Share ----------
   const MAPS_URL = 'https://maps.app.goo.gl/xBz28PhJuX7Hu93b6?g_st=ac';
