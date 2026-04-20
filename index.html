@@ -764,9 +764,7 @@
     filter.connect(audioCtx.destination);
   }
 
-  function playMelody() {
-    initAudio();
-    if (audioCtx.state === 'suspended') audioCtx.resume();
+  function scheduleMelody() {
     const bpm = 112;
     const beat = 60 / bpm;
     let t = audioCtx.currentTime + 0.08;
@@ -775,7 +773,7 @@
       t += beats * beat;
     });
     const totalMs = (t - audioCtx.currentTime + 1.6) * 1000;
-    loopTimer = setTimeout(() => { if (isPlaying) playMelody(); }, totalMs);
+    loopTimer = setTimeout(() => { if (isPlaying) scheduleMelody(); }, totalMs);
   }
 
   function stopMusic() {
@@ -786,11 +784,20 @@
     activeNodes = [];
   }
 
-  function startMusic() {
-    if (isPlaying) return;
+  async function startMusic() {
+    if (isPlaying) return false;
+    initAudio();
+    if (audioCtx.state === 'suspended') {
+      try { await audioCtx.resume(); } catch {}
+    }
+    if (audioCtx.state !== 'running') {
+      // Browser blocked autoplay — don't fake the UI
+      return false;
+    }
     isPlaying = true;
     musicBtn.classList.add('playing');
-    playMelody();
+    scheduleMelody();
+    return true;
   }
 
   musicBtn.addEventListener('click', (e) => {
@@ -798,31 +805,20 @@
     if (isPlaying) stopMusic(); else startMusic();
   });
 
-  // Try to autoplay immediately; browsers that block will fall through to the
-  // interaction listeners below and start on the very first tap/scroll/key.
-  let autoTried = false;
-  function autoStart() {
-    if (autoTried || isPlaying) return;
-    autoTried = true;
-    try { startMusic(); } catch {}
-  }
-  autoStart();
-  window.addEventListener('load', autoStart);
+  // Try to autoplay immediately. Most browsers block audio until a user
+  // gesture, so we also kick off on the first interaction of any kind.
+  startMusic();
+  window.addEventListener('load', () => { if (!isPlaying) startMusic(); });
 
-  const interactionEvents = ['pointerdown','click','touchstart','keydown','scroll','mousemove'];
-  function kickoff(ev) {
-    if (ev && ev.target && ev.target.closest && ev.target.closest('#musicBtn')) {
-      autoTried = true;
-      cleanupInteractionListeners();
-      return;
+  const interactionEvents = ['pointerdown','touchstart','keydown','scroll','mousemove'];
+  async function kickoff(ev) {
+    if (ev && ev.target && ev.target.closest && ev.target.closest('#musicBtn')) return;
+    const ok = await startMusic();
+    if (ok) {
+      interactionEvents.forEach(e => window.removeEventListener(e, kickoff));
     }
-    autoStart();
-    cleanupInteractionListeners();
   }
-  function cleanupInteractionListeners() {
-    interactionEvents.forEach(ev => window.removeEventListener(ev, kickoff, { passive: true }));
-  }
-  interactionEvents.forEach(ev => window.addEventListener(ev, kickoff, { passive: true }));
+  interactionEvents.forEach(e => window.addEventListener(e, kickoff, { passive: true }));
 
   // ---------- Share ----------
   const MAPS_URL = 'https://maps.app.goo.gl/xBz28PhJuX7Hu93b6?g_st=ac';
